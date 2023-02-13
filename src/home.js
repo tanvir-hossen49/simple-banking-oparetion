@@ -13,9 +13,11 @@ const deposit = () => {
     totalDepositEle = document.querySelector("#totalDeposit"),
     totalBalance = document.querySelector("#totalBalance");
 
-  if (depositEle.innerText !== "") {
-    totalDepositEle.innerText = +depositEle.value + +totalDepositEle.innerText;
-    totalBalance.innerText = +totalBalance.innerText + +depositEle.value;
+  if (depositEle.value !== "") {
+    totalDepositEle.innerText =
+      converToNumber(depositEle, true) + converToNumber(totalDepositEle, false);
+    totalBalance.innerText =
+      converToNumber(totalBalance, false) + converToNumber(depositEle, true);
     depositEle.value = "";
   }
 };
@@ -30,10 +32,20 @@ const withdraw = () => {
     return;
   }
 
-  if (withdrawEle.innerText !== "") {
+  if (withdrawEle.value !== "") {
     totalWithdrawEle.innerText =
-      +withdrawEle.value + +totalWithdrawEle.innerText;
-    totalBalance.innerText = +totalBalance.innerText - +withdrawEle.value;
+      converToNumber(withdrawEle, true) +
+      converToNumber(totalWithdrawEle, false);
+    totalBalance.innerText =
+      converToNumber(totalBalance, false) - converToNumber(withdrawEle, true);
     withdrawEle.value = "";
   }
+};
+
+// convert string to number
+const converToNumber = (ele, isInput) => {
+  if (isInput) {
+    return Number.parseInt(ele.value);
+  }
+  return Number.parseInt(ele.innerText);
 };
