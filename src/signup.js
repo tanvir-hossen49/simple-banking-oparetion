@@ -17,6 +17,8 @@ const userValidation = (e) => {
     confirmPassword = document.querySelector("#confirmPassword").value;
 
   if (
+    password !== "" &&
+    confirmPassword !== "" &&
     password === confirmPassword &&
     checkBox.checked &&
     firstName !== "" &&
@@ -29,7 +31,8 @@ const userValidation = (e) => {
       password: password,
     };
     window.localStorage.setItem("user", JSON.stringify(person));
-    window.location.href = "/login.html";
+
+    window.location.href = "/simple-banking-oparetion/login.html";
   } else {
     alert("please fill all input field");
   }
