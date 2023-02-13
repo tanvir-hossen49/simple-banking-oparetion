@@ -16,7 +16,6 @@ const login = (e) => {
   if (password === person.password && email === person.email) {
     window.localStorage.removeItem("user");
     window.location.href = "/simple-banking-oparetion/home.html";
-    // window.location.href = "/home.html";
   } else {
     alert("Your Email or Password is invalid");
   }

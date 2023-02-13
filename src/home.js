@@ -14,10 +14,8 @@ const deposit = () => {
     totalBalance = document.querySelector("#totalBalance");
 
   if (depositEle.value !== "") {
-    totalDepositEle.innerText =
-      converToNumber(depositEle, true) + converToNumber(totalDepositEle, false);
-    totalBalance.innerText =
-      converToNumber(totalBalance, false) + converToNumber(depositEle, true);
+    totalDepositEle.innerText = converToNumber(depositEle, totalDepositEle);
+    totalBalance.innerText = converToNumber(depositEle, totalBalance);
     depositEle.value = "";
   }
 };
@@ -33,19 +31,23 @@ const withdraw = () => {
   }
 
   if (withdrawEle.value !== "") {
-    totalWithdrawEle.innerText =
-      converToNumber(withdrawEle, true) +
-      converToNumber(totalWithdrawEle, false);
-    totalBalance.innerText =
-      converToNumber(totalBalance, false) - converToNumber(withdrawEle, true);
+    totalWithdrawEle.innerText = converToNumber(withdrawEle, totalWithdrawEle);
+    totalBalance.innerText = converToNumber(withdrawEle, totalBalance, "minus");
     withdrawEle.value = "";
   }
 };
 
 // convert string to number
-const converToNumber = (ele, isInput) => {
-  if (isInput) {
-    return Number.parseInt(ele.value);
+/**
+ *
+ * @param {input.value} ele
+ * @param {element.innerText} total
+ * @param {plus or minus} oparetion
+ * @returns total
+ */
+const converToNumber = (ele, total, oparetion = "plus") => {
+  if (oparetion === "plus") {
+    return Number.parseInt(ele.value) + Number.parseInt(total.innerText);
   }
-  return Number.parseInt(ele.innerText);
+  return Number.parseInt(total.innerText) - Number.parseInt(ele.value);
 };

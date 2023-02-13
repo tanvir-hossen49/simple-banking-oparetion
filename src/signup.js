@@ -33,7 +33,7 @@ const userValidation = (e) => {
     window.localStorage.setItem("user", JSON.stringify(person));
 
     window.location.href = "/simple-banking-oparetion/login.html";
-    // window.location.href = "/login.html";
+
   } else {
     alert("please fill all input field");
   }
