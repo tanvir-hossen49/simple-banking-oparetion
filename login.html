@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in page</title>
+    <link rel="stylesheet" href="output/tailwind.css" />
+  </head>
+  <body>
+    <body class="h-screen flex justify-center items-center bg-gray-700">
+      <div class="w-10/12 lg:w-4/12 sm:w-8/12 md:w-6/12">
+        <h1 class="text-4xl text-white font-bold mb-10">Sign Up</h1>
+        <form>
+          <div>
+            <input
+              type="email"
+              placeholder="Email"
+              class="input w-full mt-5"
+              id="email"
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Password"
+              class="input w-full mt-5"
+              id="password"
+            />
+          </div>
+          <div>
+            <h4 class="text-red-400 text-sm my-2">
+              *when Login will be successful data will be deleted from local
+              store
+            </h4>
+          </div>
+          <div>
+            <input
+              type="submit"
+              value="Sign Up"
+              id="submit"
+              class="w-full bg-pink-600 text-2xl font-semibold text-white py-3 rounded-full mt-4 cursor-pointer"
+            />
+          </div>
+        </form>
+      </div>
+    </body>
+
+    <script src="src/login.js"></script>
+  </body>
+</html>

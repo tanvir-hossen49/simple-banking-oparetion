@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sign up</title>
+    <link rel="stylesheet" href="output/tailwind.css" />
+  </head>
+  <body class="h-screen flex justify-center items-center bg-gray-700">
+    <div class="w-10/12 lg:w-4/12 sm:w-8/12 md:w-6/12">
+      <h1 class="text-4xl text-white font-bold mb-10">Sign Up</h1>
+      <form>
+        <div class="flex gap-3">
+          <input
+            type="text"
+            placeholder="First Name"
+            class="input w-6/12"
+            id="firstName"
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            class="input w-6/12"
+            id="lastName"
+          />
+        </div>
+        <div>
+          <input
+            type="email"
+            placeholder="Email"
+            class="input w-full mt-5"
+            id="email"
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            class="input w-full mt-5"
+            id="password"
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            class="input w-full mt-5"
+            id="confirmPassword"
+          />
+        </div>
+        <div class="text-xl my-3 pl-4 text-white">
+          <input type="checkbox" id="checkBox" class="h-4 w-4" />
+          I Agree With <a href="#" class="text-pink-600">privacy</a> and
+          <a href="#" class="text-pink-600"> policey</a>
+        </div>
+        <div>
+          <input
+            type="submit"
+            value="Sign Up"
+            id="submit"
+            class="w-full bg-pink-600 text-2xl font-semibold text-white py-3 rounded-full mt-4 cursor-pointer"
+          />
+        </div>
+      </form>
+    </div>
+    <!-- js link -->
+    <script src="src/signup.js"></script>
+  </body>
+</html>

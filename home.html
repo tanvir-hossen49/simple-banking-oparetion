@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Statement</title>
+    <link rel="stylesheet" href="output/tailwind.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <h1 class="text-center text-5xl mt-8 font-semibold">
+        Welcome to Baper Bank
+      </h1>
+
+      <!-- deposite withdaw and total -->
+      <div
+        class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-10/12 md:w-9/12 mx-auto mt-8"
+      >
+        <div class="bg-red-400 p-8 rounded-lg">
+          <h4 class="text-white font-semibold text-2xl mb-3">Deposite</h4>
+          <h2 class="font-medium text-5xl">
+            $<span id="totalDeposit">00</span>
+          </h2>
+        </div>
+        <div class="bg-green-400 p-8 rounded-lg">
+          <h4 class="text-white font-semibold text-2xl mb-3">Withdraw</h4>
+          <h2 class="fosemibold text-5xl">
+            $<span id="totalWithdraw">00</span>
+          </h2>
+        </div>
+        <div class="bg-yellow-400 p-8 rounded-lg">
+          <h4 class="text-white font-semibold text-2xl mb-3">Total Balance</h4>
+          <h2 class="fosemibold text-5xl">
+            $<span id="totalBalance">00</span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- deposite field -->
+      <div
+        class="grid grid-cols-1 gap-6 md:grid-cols-2 w-10/12 md:w-9/12 mx-auto mt-8"
+      >
+        <div class="p-8 bg-red-400 rounded-lg">
+          <h2 class="font-medium text-2xl text-white">Please Deposite</h2>
+          <input
+            type="number"
+            min="0"
+            id="depositEle"
+            class="block w-full my-3 border-none outline-none pl-3 py-2 rounded-sm text-lg"
+            placeholder="Enter Your Deposite Amount"
+          />
+          <button
+            id="deposit"
+            class="bg-yellow-300 px-8 py-2 rounded-md text-lg font-medium"
+          >
+            Deposite
+          </button>
+        </div>
+        <div class="p-8 bg-green-400 rounded-lg">
+          <h2 class="font-medium text-2xl text-white">Please Withdraw</h2>
+          <input
+            type="number"
+            min="0"
+            id="withdrawEle"
+            class="block w-full my-3 border-none outline-none pl-3 py-2 rounded-sm text-lg"
+            placeholder="Enter Your Withdraw Amount"
+          />
+          <button
+            id="withdraw"
+            class="bg-yellow-300 px-8 py-2 rounded-md text-lg font-medium"
+          >
+            Withdraw
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- js link -->
+    <script src="src/home.js"></script>
+  </body>
+</html>
